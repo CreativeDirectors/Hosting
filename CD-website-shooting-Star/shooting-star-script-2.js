@@ -126,7 +126,7 @@ function () {
         _params$isAutoStart = params.isAutoStart,
         isAutoStart = _params$isAutoStart === void 0 ? true : _params$isAutoStart,
         _params$pixelRatio = params.pixelRatio,
-        pixelRatio = _params$pixelRatio === void 0 ? window.devicePixelRatio : _params$pixelRatio,
+        pixelRatio = _params$pixelRatio === 1,
         _params$antialias = params.antialias,
         antialias = _params$antialias === void 0 ? window.devicePixelRatio === 1 : _params$antialias,
         _params$alpha = params.alpha,
