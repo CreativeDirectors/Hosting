@@ -1280,10 +1280,10 @@ function () {
       random.push(Math.random());
     }
 
-    geometry.addAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-    geometry.addAttribute('mouse', new THREE.Float32BufferAttribute(mouse, $a87C$var$MOUSE_ATTRIBUTE_COUNT));
-    geometry.addAttribute('aFront', new THREE.Float32BufferAttribute(aFront, $a87C$var$FRONT_ATTRIBUTE_COUNT));
-    geometry.addAttribute('random', new THREE.Float32BufferAttribute(random, 1));
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geometry.setAttribute('mouse', new THREE.Float32BufferAttribute(mouse, $a87C$var$MOUSE_ATTRIBUTE_COUNT));
+    geometry.setAttribute('aFront', new THREE.Float32BufferAttribute(aFront, $a87C$var$FRONT_ATTRIBUTE_COUNT));
+    geometry.setAttribute('random', new THREE.Float32BufferAttribute(random, 1));
     var $puli$$interop$default = $parcel$interopDefault($puli$exports);
     var $v3o$$interop$default = $parcel$interopDefault($v3o$exports);
     var material = this.material = new THREE.RawShaderMaterial({
