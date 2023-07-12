@@ -1732,7 +1732,6 @@ function () {
   }]);
   return WebGL;
 }();
-
 var $Focm$var$webGL = new $Focm$var$WebGL({
   canvas: document.getElementById('canvas-glitter')
 });
