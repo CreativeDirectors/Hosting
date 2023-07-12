@@ -358,7 +358,7 @@ function () {
       var _this5 = this;
 
       var size = this.renderer.getSize();
-      var pixelRatio = this.renderer.getPixelRatio();
+      var pixelRatio = 1 
       size.width *= pixelRatio;
       size.height *= pixelRatio;
       var composer = this.composer = new THREE.EffectComposer(this.renderer, new THREE.WebGLRenderTarget(size.width, size.height, {
