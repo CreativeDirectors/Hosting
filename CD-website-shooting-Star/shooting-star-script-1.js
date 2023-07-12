@@ -1734,7 +1734,7 @@ function () {
 }();
 
 var $Focm$var$webGL = new $Focm$var$WebGL({
-  canvas: document.getElementById('canvas')
+  canvas: document.getElementById('canvas-glitter')
 });
 setTimeout(function () {
   $Focm$var$webGL.start();
