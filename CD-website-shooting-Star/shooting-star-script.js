@@ -1974,6 +1974,7 @@
                                             onUpdate: function () {
                                                 let xx = myCoords.myX
                                                 let yy = myCoords.myY
+                                                    console.log("going to . ", xx,yy)
                                                 _this2.shootingStar.draw({ clientX: xx, clientY: yy })
                                             }
                                         })
