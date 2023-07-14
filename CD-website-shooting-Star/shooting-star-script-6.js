@@ -1937,7 +1937,7 @@
                             }
 
                             function executeEverySeconds(callback) {
-                                setInterval(callback, 4000);
+                                setInterval(callback, 4500);
                                 console.log("new Coords");
                             }
                             var period = Math.PI * 3;
@@ -1950,6 +1950,7 @@
                             }, {
                                 duration: $Focm$var$FIRST_DURATION,
                                 onAfter: function onAfter() {
+                                    /*
                                     _this2.shootingStar.draw({
                                         clientX: -$mrfc$export$default.clientHalfWidth,
                                         clientY: $mrfc$export$default.clientHeight - $mrfc$export$default.clientHalfHeight
@@ -1959,6 +1960,7 @@
                                         clientX: -$mrfc$export$default.clientHalfWidth * 1.1,
                                         clientY: 0
                                     });
+                                    */
 
                                     // START HERE
                                     // SLIM SLIM 
@@ -1979,7 +1981,7 @@
                                             myY: multi > 0 ? -$mrfc$export$default.clientHalfWidth : $mrfc$export$default.clientHalfWidth,
 
                                             // myY: ey = Math.random() < 0.5 ? ey < 0.25 ? -$mrfc$export$default.clientHalfWidth : -$mrfc$export$default.clientHalfWidth + $mrfc$export$default.clientHalfWidth / 2 : ey < 0.75 ? $mrfc$export$default.clientHalfWidth : $mrfc$export$default.clientHalfWidth + -$mrfc$export$default.clientHalfWidth / 2,
-                                            duration: 3,
+                                            duration: 3.5,
                                             ease: "Power4.easeOut",
                                             onStart: async () => {
 
