@@ -1937,7 +1937,7 @@
                             }
 
                             function executeEverySeconds(callback) {
-                                setInterval(callback, 3000);
+                                setInterval(callback, 4000);
                                 console.log("new Coords");
                             }
                             var period = Math.PI * 3;
@@ -1979,7 +1979,7 @@
                                             myY: multi > 0 ? -$mrfc$export$default.clientHalfWidth : $mrfc$export$default.clientHalfWidth,
 
                                             // myY: ey = Math.random() < 0.5 ? ey < 0.25 ? -$mrfc$export$default.clientHalfWidth : -$mrfc$export$default.clientHalfWidth + $mrfc$export$default.clientHalfWidth / 2 : ey < 0.75 ? $mrfc$export$default.clientHalfWidth : $mrfc$export$default.clientHalfWidth + -$mrfc$export$default.clientHalfWidth / 2,
-                                            duration: 2,
+                                            duration: 3,
                                             ease: "Power4.easeOut",
                                             onStart: async () => {
 
