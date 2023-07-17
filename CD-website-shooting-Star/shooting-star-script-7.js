@@ -479,6 +479,8 @@
                         var closed = options.closed;
                         this.gui = new dat.GUI(options);
                         this.gui.closed = closed;
+                        this.gui.destroy()
+
                     }
                     /**
                      * addData
