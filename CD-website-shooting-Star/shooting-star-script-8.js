@@ -1973,35 +1973,41 @@
                                     let ex = 0, ey = 0
                                     let multi = 1
                                     let randY = $mrfc$export$default.clientHalfHeight
+
+                                    let hw = $mrfc$export$default.clientHalfWidth
+                                    let hh = $mrfc$export$default.clientHalfHeight
+                                        
                                     executeEverySeconds(() => {
                                         gsap.to(myCoords, {
                                             // myY: rand(-$mrfc$export$default.clientHalfHeight, $mrfc$export$default.clientHalfHeight),
                                             // myX: rand(-$mrfc$export$default.clientHalfWidth, $mrfc$export$default.clientHalfWidth),
 
-                                            myX: ex = Math.random() < 0.5 ? ex < 0.25 ? -$mrfc$export$default.clientHalfWidth : -$mrfc$export$default.clientHalfWidth + $mrfc$export$default.clientHalfWidth / 3 : ex < 0.75 ? $mrfc$export$default.clientHalfWidth : $mrfc$export$default.clientHalfWidth + -$mrfc$export$default.clientHalfWidth / 3,
-                                            // myY: $mrfc$export$default.clientHalfHeight * multi,
-                                            myY: multi > 0 ? -$mrfc$export$default.clientHalfWidth : $mrfc$export$default.clientHalfWidth,
 
-                                            // myY: ey = Math.random() < 0.5 ? ey < 0.25 ? -$mrfc$export$default.clientHalfWidth : -$mrfc$export$default.clientHalfWidth + $mrfc$export$default.clientHalfWidth / 2 : ey < 0.75 ? $mrfc$export$default.clientHalfWidth : $mrfc$export$default.clientHalfWidth + -$mrfc$export$default.clientHalfWidth / 2,
+                                            myX: () => {
+                                                let ran = rand(1, 10)
+                                                console.log("latest is : ", latest.x);
+                                                if (ran < 5 && latest.x > 0) {
+                                                    return -hw + (hw / ran)
+                                                } else {
+                                                    return hw + (-hw / ran)
+                                                }
+
+                                            },
+                                            myY: latest.y > 0 ? -hh : hh,  
+                                                
                                             duration: 3.5,
                                             ease: "Power4.easeOut",
                                             onStart: async () => {
 
-                                                if (latest.x != myCoords.myX) {
-                                                    latest.x = myCoords.myX
-                                                } else {
-                                                    myCoords.myX = -myCoords.myX
-                                                    latest.x = myCoords.myX
-                                                }
+                                               latest.x = myCoords.myX
 
                                                 if (latest.y != myCoords.myY) {
                                                     latest.y = myCoords.myY
                                                 } else {
-                                                    console.log(myCoords.myY, latest.y);
                                                     myCoords.myY = -myCoords.myY
                                                     latest.y = myCoords.myY
+
                                                 }
-                                                console.log(myCoords);
 
 
                                             },
