@@ -1932,7 +1932,7 @@
                                 var clientWidth = $mrfc$export$default.clientWidth = this.root.canvas.clientWidth;
                             var clientHeight = $mrfc$export$default.clientHeight = this.root.canvas.clientHeight;
                             var _this2 = this;
-                            let myCoords = { myX: clientWidth, myY: clientHeight }
+                            let myCoords = { myX: -clientWidth, myY: -clientHeight }
 
                             function rand(a, b) {
                                 let res = a + (b - a) * Math.random()
