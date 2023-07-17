@@ -1929,8 +1929,10 @@
                     }, {
                         key: "start",
                         value: function start() {
+                                var clientWidth = $mrfc$export$default.clientWidth = this.root.canvas.clientWidth;
+                            var clientHeight = $mrfc$export$default.clientHeight = this.root.canvas.clientHeight;
                             var _this2 = this;
-                            let myCoords = { myX: 0, myY: 0 }
+                            let myCoords = { myX: clientWidth, myY: clientHeight }
 
                             function rand(a, b) {
                                 let res = a + (b - a) * Math.random()
@@ -1940,7 +1942,6 @@
 
                             function executeEverySeconds(callback) {
                                 setInterval(callback, 4500);
-                                console.log("new Coords");
                             }
                             var period = Math.PI * 3;
                             var amplitude = Math.min(Math.max($mrfc$export$default.clientWidth * 0.1, 100), 180);
@@ -1985,7 +1986,6 @@
 
                                             myX: () => {
                                                 let ran = rand(1, 10)
-                                                console.log("latest is : ", latest.x);
                                                 if (ran < 5 && latest.x > 0) {
                                                     return -hw + (hw / ran)
                                                 } else {
