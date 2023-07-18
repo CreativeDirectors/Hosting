@@ -1985,8 +1985,8 @@
 
 
                                             myX: () => {
-                                                let ran = rand(1, 10)
-                                                if (ran < 5 && latest.x > 0) {
+                                                let ran = rand(1, 11)
+                                                if (ran < 5) {
                                                     return -hw + (hw / ran)
                                                 } else {
                                                     return hw + (-hw / ran)
