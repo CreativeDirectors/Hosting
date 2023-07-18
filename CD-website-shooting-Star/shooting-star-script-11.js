@@ -1979,6 +1979,9 @@
                                     let hh = $mrfc$export$default.clientHalfHeight
                                         
                                     executeEverySeconds(() => {
+                                            if (!document.hidden) {
+                                    
+                                
                                         gsap.to(myCoords, {
                                             // myY: rand(-$mrfc$export$default.clientHalfHeight, $mrfc$export$default.clientHalfHeight),
                                             // myX: rand(-$mrfc$export$default.clientHalfWidth, $mrfc$export$default.clientHalfWidth),
@@ -2028,6 +2031,8 @@
                                             }
 
                                         })
+                                            }
+                                                    
                                     })
 
                                     // END SLIM
