@@ -2039,7 +2039,9 @@
 
                                                 let xx = myCoords.myX
                                                 let yy = (Math.sin(myCoords.myX * 0.009) * 100) + myCoords.myY * 2
+                                                if (visibleTab) {
                                                 _this2.shootingStar.draw({ clientX: xx, clientY: yy })
+                                                }
                                                 // _this2.shootingStar.draw({
                                                 //     clientX: myCoords.myX
                                                 //     , clientY: myCoords.myY
