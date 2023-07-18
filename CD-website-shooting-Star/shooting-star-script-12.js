@@ -1977,9 +1977,29 @@
 
                                     let hw = $mrfc$export$default.clientHalfWidth
                                     let hh = $mrfc$export$default.clientHalfHeight
+
+                                        let visibleTab = true
+                            document.addEventListener('visibilitychange', (event) => {
+                                if (document.hidden) {
+                                    console.log('not visible');
+                                    visibleTab = false
+                                    // this.renderer.setAnimationLoop(null);
+                                } else {
+                                    console.log('is visible');
+
+                                    visibleTab = true
+                                    // this.renderer.setAnimationLoop(this.renderer.bind(this));
+
+                                }
+                            });
                                         
                                     executeEverySeconds(() => {
-                                            if (!document.hidden) {
+                                            if (document.hidden || !visibleTab) {
+                                    console.log("hidden ... ");
+                                    console.log({ visibleTab });
+
+                                }
+                                else {
                                     
                                 
                                         gsap.to(myCoords, {
