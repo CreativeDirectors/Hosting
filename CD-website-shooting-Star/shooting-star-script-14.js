@@ -152,7 +152,7 @@
                         this.resizeCallbacks = [];
                         this.objects = {}; // renderer
 
-                        this.renderer = new THREE.WebGLRenderer({
+                        this.renderer = new THREE.WebGL1Renderer({
                             antialias: antialias,
                             alpha: alpha,
                             canvas: canvas
@@ -1996,7 +1996,6 @@
                                     executeEverySeconds(() => {
                                             if (document.hidden || !visibleTab) {
                                     console.log("hidden ... ");
-                                    console.log({ visibleTab });
 
                                 }
                                 else {
@@ -2006,17 +2005,26 @@
                                             // myY: rand(-$mrfc$export$default.clientHalfHeight, $mrfc$export$default.clientHalfHeight),
                                             // myX: rand(-$mrfc$export$default.clientHalfWidth, $mrfc$export$default.clientHalfWidth),
 
-
                                             myX: () => {
+                                                    if (visibleTab) {
                                                 let ran = rand(1, 11)
                                                 if (ran < 5) {
                                                     return -hw + (hw / ran)
+                                                    console.log('myX : ', myCoords.myX, 'latest X ', latest.x);
+
                                                 } else {
                                                     return hw + (-hw / ran)
+                                                    console.log('myX : ', myCoords.myX, 'latest X ', latest.x);
+
                                                 }
+                                            }
 
                                             },
-                                            myY: latest.y > 0 ? -hh : hh,  
+                                            myY: () => {
+                                            if (visibleTab) {
+                                                return latest.y > 0 ? -hh : hh
+                                            }
+                                        },  
                                                 
                                             duration: 3.5,
                                             ease: "Power4.easeOut",
@@ -2036,22 +2044,14 @@
                                             },
                                             onUpdate: function () {
 
-
+                                                if (visibleTab) {
+                                                        
                                                 let xx = myCoords.myX
                                                 let yy = (Math.sin(myCoords.myX * 0.009) * 100) + myCoords.myY * 2
-                                                if (visibleTab) {
                                                 _this2.shootingStar.draw({ clientX: xx, clientY: yy })
                                                 }
-                                                // _this2.shootingStar.draw({
-                                                //     clientX: myCoords.myX
-                                                //     , clientY: myCoords.myY
-                                                // })
-                                            },
-                                            onComplete: () => {
-                                                multi *= -1
-
+                                                
                                             }
-
                                         })
                                             }
                                                     
